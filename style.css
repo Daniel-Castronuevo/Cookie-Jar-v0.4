@@ -1,0 +1,1018 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* - - - - - - - - HEADER - - - - - - - - */
+
+header{
+    margin: auto;
+    display: flex;
+    height: 5em;
+    padding: 15px 20px;
+    background: rgb(15, 15, 15);
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    box-shadow: 0 0 1em rgba(0, 0, 0,0.8);
+    user-select: none;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header--logo-img{
+    filter: drop-shadow(0 0 3px rgb(255, 225, 0));
+}
+
+/* - - - - - - - - NAV- - - - - - - - */
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* - - - - - - - - BOTONES - - - - - - - - */
+
+.buttons{
+    border: none;
+    color: #000;
+    font-weight: bold;
+    background-image: url(img/background-a.png);
+    background-size: 100%;
+    font-family: 'Rajdhani', sans-serif;
+    text-align: center;
+    text-decoration: none;
+    border-bottom: 3px solid rgb(136, 97, 5);
+    border-radius: .5em;
+    
+    animation-name: background-a;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+a{
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: 0.9em;
+    padding: 5px 20px;
+    margin: 0 10px;
+}
+
+.buttons i{
+    margin-left: 5px;
+    align-self: center;
+}
+
+header a:hover{
+    border-bottom: 0;
+    border-top: 3px solid rgb(15, 15, 15);
+}
+/* - - - - - - - - ANIMACIÓN DE FONDO DE BOTONES - - - - - - - - */
+
+@keyframes background-a {
+    0%{
+        background-position: 0%;
+    }
+    50%{
+        background-position: 100% 100%;
+    }
+    100%{
+        background-position: 0%;
+    }
+}
+
+/* - - - - - - - - MENU DESPLEGABLE - - - - - - - - */
+.products{
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    margin-right: 15em;
+    margin-top: 21.6em;
+    background: rgb(20, 20, 20);
+    border-radius: 1em;
+    border:1px solid rgb(255, 191, 0);
+    overflow: hidden;
+    box-shadow: 0 0 10px #000;
+}
+
+.products a{
+    width: 100%;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Rajdhani', sans-serif;
+    border-bottom: 1px solid rgb(255, 191, 0);
+}
+
+.products a:hover{
+    border: none;
+    background: rgb(42, 42, 42);
+    border-bottom: 1px solid rgb(255, 191, 0);
+}
+
+.products a:last-child{
+    border: none;
+}
+
+.products{
+    display: none;
+}
+
+.cart-count{
+    display: flex;
+    justify-content: center;
+    background: rgb(0, 0, 0);
+    position: absolute;
+    margin-bottom: 2.3em;
+    margin-left: 9.8em;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    border: 1px solid #fff;
+    color: #fff;
+    box-shadow: 0 0 10px #000;
+    font-size: 0.75em;
+}
+
+/* - - - - - - - - FIN DE HEADER - - - - - - - - */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* - - - - - - - - SEPARATOR "categorías principales" - - - - - - - - */
+
+.separator{
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    font-family: 'Archivo Narrow', sans-serif;
+}
+
+.separator p{
+    font-size: 1.5em;
+    color: rgb(26, 26, 26);
+    letter-spacing: 2px;
+}
+
+.separator p::before{
+    background: #ccc;
+    content: " ";
+    position: absolute;
+    width: 150px;
+    height: 2px;
+    margin: .65em -6.6em;
+    rotate: 180deg;
+}
+
+.separator p::after{
+    background: #ccc;
+    content: " ";
+    position: absolute;
+    width: 150px;
+    height: 2px;
+    margin: .65em 0.2em;
+}
+
+
+
+/* - - - - - - - - FIN DE SEPARATOR "categorías principales" - - - - - - - - */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* - - - - - - - - SECTION CARROUSEL - - - - - - - - */
+
+.cards-wave{
+    background-image: url(img/wave.png);
+    height: 15px;
+    position: relative;
+    bottom: 15px;
+    background-size: 100%;
+}
+
+.cards-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    bottom: 10px;
+    font-family: 'Rajdhani', sans-serif;
+    background: #fff;
+    border-radius: 1em;
+}
+
+.container-carrousel{
+    width: 635px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    user-select: none;
+    margin-bottom: 1em;
+}
+
+.carrousel{
+    display: flex;
+    height: 230px;
+    width: 100%;
+    overflow-x: scroll;
+    padding: 10px 0;
+    align-items: center;
+    overflow: hidden;
+}
+
+.carrousel img{
+    width: 160px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 1em;
+}
+
+.cards{
+    border: 1px solid rgb(183, 183, 183);
+    margin: 0 15px;
+    border-radius: 1em;
+    transition: 1000ms;
+    transition: transform 750ms;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0,0.3);
+    background: #fff;
+}
+
+/* - - - - - - - - BOTONES CARROUSEL - - - - - - - */
+
+.button-arrow-left{
+    background: rgb(15, 15, 15);
+    border: none;
+    height: 30px;
+    width: 30px;
+    padding: 3px;
+    border-radius: 100%;
+    background-size: cover;
+    display: flex;
+    margin-right:5px;
+}
+
+.button-arrow-right{
+    background: rgb(15, 15, 15);
+    border: none;
+    height: 30px;
+    width: 30px;
+    padding: 3px;
+    border-radius: 100%;
+    background-size: cover;
+    display: flex;
+    margin-left: 5px;
+}
+
+.button-arrow-right i, .button-arrow-left i{
+    align-self: center;
+    justify-self: center;
+    padding-right: 4px;
+    color: #fff;
+}
+
+.button-arrow-right:hover, .button-arrow-left:hover{
+    background: rgb(31, 31, 31);
+}
+
+.mas-info--link{
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    color: rgb(156, 156, 156);
+    font-weight: bold
+}
+.underline{
+    width: 50px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.underline-objet{
+    width: 50px;
+    height: 5px;
+    background: rgb(255, 162, 0);
+    transform: translate(-100%);
+    transition: 500ms;
+}
+
+.mas-info--link:hover .underline-objet{
+    transform : translate(0%);
+}
+
+/* - - - - - - - - FIN DE SECTION CARROUSEL - - - - - - - - */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* - - - - - - - - SECTION ANNOUNCEMETN - - - - - - - - */
+
+.announcement{
+    display: flex;
+    width: 90%;
+    max-width: 1400px;
+    justify-content: center;
+    background: #f5f5f5;
+    border-radius: 1em;
+    margin: auto;
+}
+
+.announcements{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    text-align: center;
+    height: 100%;
+    padding: 10px;
+    font-family: 'Rajdhani', sans-serif;
+    overflow: hidden;
+}
+
+.announcement b{
+    font-size: 1em;
+}
+
+.announcements p{
+    font-size: 0.8em;
+}
+
+/* - - - - - - - - FIN DE SECTION ANNOUNCEMETN - - - - - - - - */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* - - - - - - - - SEPARATOR "destacados" - - - - - - - - */
+
+.separator-featured p::before{
+    width: 225px;
+    margin: .65em -9.65em;
+}
+
+.separator-featured p::after{
+    width: 225px;
+}
+
+/* - - - - - - - - FIN DE SEPARATOR "destacados" - - - - - - - - */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* - - - - - - - - FEATURED - - - - - - - - */
+
+.featured{
+    padding: 10px;
+    border-radius: 1em;
+    width: 85%;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 1em;
+}
+
+/* - - - - - - - - GRID CONTAINER - - - - - - - - */
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    grid-gap: 15px;
+}
+
+.grid-cards{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #000;
+    overflow: hidden;
+    background: #f5f5f5;
+    box-shadow: 0 5px 3px rgba(0, 0, 0, 0.2);
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.grid-cards--text{
+    text-align: center;
+    position: relative;
+    bottom: 1em;
+}
+
+.grid-cards--text p{
+    letter-spacing: 1px;
+}
+
+.grid-cards--text b{
+    font-size: 1.3em;
+}
+
+.imgs-container{
+    width: 100%;
+}
+
+.imgs{
+    height: 200px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+.grid-card3 img{
+    height: 300px;
+    position:relative;
+    left: -5em;
+}
+
+.triangle{
+    clip-path: polygon(0 0, 0% 100%, 100% 100%);
+    background: #f5f5f5;
+    padding: 10px;
+    position: relative;
+    bottom: 1.15em;
+    width: 100%;
+}
+
+.grid-cards--text .mas-info--link{
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(156, 156, 156);
+    font-weight: bold
+}
+
+.overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    opacity: 0;
+}
+
+.grid-cards:hover .overlay{
+    opacity: 1;
+    transition: 250ms;
+}
+
+.all-products{
+    margin-top: 1.5em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.all-products--button{
+    border: none;
+    width: 50%;
+    max-width: 300px;
+    padding: 10px 4px;
+    letter-spacing: 2px;
+    color: #fff;
+    background: rgb(15, 15, 15);
+    border-radius: .5em;
+    display: flex;
+    justify-content: center;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1em;
+    flex-wrap: nowrap;
+    text-decoration: none;
+}
+
+.all-products--button:hover{
+    background: rgb(25, 25, 25);
+}
+
+/* - - - - - - - - FIN DE FEATURED - - - - - - - - */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* - - - - - - - - SEPARATOR "contactános" - - - - - - - - */
+
+.separator-contact p::before{
+    width: 215px;
+    margin: .65em -9.35em;
+}
+
+.separator-contact p::after{
+    width: 215px;
+}
+
+/* - - - - - - - - FIN DE SEPARATOR "contactános" - - - - - - - - */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* - - - - - - - - CONTACT - - - - - - - - */
+
+.contact{
+    position: relative;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.3);
+    margin: auto;
+    margin-top: 1em;
+    padding: 1em;
+    max-width: 610px;
+    border-radius: 1em;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    background: #f5f5f5;
+    padding: 2em;
+}
+
+.social-media{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-media a{
+    font-size: 2em;
+    padding: 0;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    padding-top: 6px;
+    padding-right: 3px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    border-radius: 100%;
+}
+
+.social-media a:hover , .input-4:hover{
+    border-bottom: none;
+    border-top: 3px solid #eee;
+}
+
+.form-container{
+    margin: auto;
+    margin-top: 1em;
+    width: 450px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+form input, textarea{
+    outline: none;
+    padding: 7px;
+    margin: 5px;
+    border: none;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.2em;
+    border-radius: 0.2em;
+    border: 1px solid #ccc;
+    border-top: 2px solid #ccc;
+    resize: none;
+}
+
+.button-container{
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+}
+
+.verify{
+    display: flex;
+    align-items: center;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.input-4{
+    padding: 5px;
+    width: 45%;
+    letter-spacing: 3px;
+    height: 40px;
+    font-size: 1em;
+}
+
+.green {
+    color: rgb(44, 188, 0);
+}
+
+.red{
+    color: rgb(218, 0, 0);
+}
+
+.more-contacts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    font-family: 'Rajdhani', sans-serif;
+    color: rgb(60, 60, 60);
+    letter-spacing: 1px;
+}
+
+/* - - - - - - - - FIN CONTACT - - - - - - - - */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* - - - - - - - - FOOTER - - - - - - - - */
+
+footer{
+    margin-top: 3em;
+    position: relative;
+    width: 100%;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.7);
+    background: rgb(15, 15, 15);
+    display: flex;
+    justify-content: center;
+}
+
+.footer-container{
+    width: 100%;
+    display: flex;
+    font-family: 'Rajdhani', sans-serif;
+    color: #fff;
+    justify-content: space-evenly;
+    padding: 2em;
+    max-width: 1400px;
+}
+
+.payment-methods{
+   display: flex;
+   flex-direction: column;
+}
+
+.payment-methods--cards-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(30px,1fr));
+    justify-items: center;
+    grid-gap: 10px;
+}
+
+footer h3{
+    color: rgb(255, 255, 255);
+    margin-bottom: 1em;
+}
+
+.payment-methods--cards-container img{
+    width: 45px;
+}
+
+.locations{
+    max-width: 33%;
+}
+
+.locations p{
+    margin-bottom: 5px;
+    font-size: 1em;
+
+}
+
+.more-info{
+    max-width: 33%;
+    display: flex;
+    flex-direction: column;
+}
+
+.more-info a{
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 5px;
+    font-size: 1em;
+}
+
+.more-info a:hover{
+    text-decoration: underline;
+}
+
+.footer-separator{
+    height: 100%;
+    width: 1px;
+    background: rgb(255, 179, 0);
+}
+
+.copyright{
+    background: rgb(40, 40, 40);
+    padding: 10px;
+    color: rgb(180, 180, 180);
+    font-family: 'Rajdhani', sans-serif;
+    display: flex;
+    justify-content: center;
+    font-size: 1em;
+}
